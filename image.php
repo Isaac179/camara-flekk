@@ -49,6 +49,6 @@ require 'function.php';
     </table>
     <br>
     
-    <a href="../webcam"><button type="button" name="button">Go To Webcam Page</button></a>
+    <a href="../camara-flekk"><button type="button" name="button">Tomar nuevo registro</button></a>
 </body>
 </html>
