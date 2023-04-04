@@ -23,8 +23,8 @@
         <option></option>
       </select>
     </div>
-
-    <video id="video" autoplay playsinline></video>
+<br><br>
+    <video id="video" autoplay playsinline poster="https://flekk.com/img/cms/3autopartes_flekk_los_mejores_precios_2023.png";></video>
     
     <div class="container" style="text-align: center;">
       <br>

@@ -20,13 +20,13 @@ require 'function.php';
             border-radius: 20px;
             cursor: pointer;
             font-size: 16px;
-            background: #F0AD4E;
+            background: #70b3b8;
             color: white;
         }
     </style>
 </head>
 <body>
-
+<a href="../camara-flekk"><button type="button" name="button">Tomar nuevo registro</button></a><br><br>
     <table border = 1 cellspacing = 0 cellpadding = 10>
         <tr>
             <td>#</td>

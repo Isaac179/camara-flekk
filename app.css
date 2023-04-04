@@ -80,3 +80,13 @@ footer a {
   background: #102f5b;
   color: white;
 }
+
+#button, #select {
+    width: 170px;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    background: #f9feff;
+}
