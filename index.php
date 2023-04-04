@@ -26,16 +26,16 @@
 
     <video id="video" autoplay playsinline></video>
     
-    <div class="container">
-
+    <div class="container" style="text-align: center;">
       <br>
-      <button type="button" onclick="saveSnap();">Tomar Foto</button><br><br>
-      <a href="image.php"><button type="button" name="button">Ver base de imagenes&#x2192;</button> </a>
-  </div>
+      <button type="button" onclick="saveSnap();">Tomar foto</button>
+      <a href="image.php"><button type="button" name="button">Ver base de imagenes&#x2192;</button> </a>  </div>
+<div><br></div>
   </main>
   <footer>
+    
     <p>flekk camara
-      <a href="https://flekk.com">@webmaster</a>
+      <a href="mailto:icalderon@flekk.com">@webmaster</a>
     </p>
   </footer>
 
