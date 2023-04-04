@@ -29,7 +29,7 @@
     <div class="container">
 
       <br>
-      <button type="button" onclick="saveSnap();">Tomar Foto</button><br>
+      <button type="button" onclick="saveSnap();">Tomar Foto</button><br><br>
       <a href="image.php"><button type="button" name="button">Ver base de imagenes&#x2192;</button> </a>
   </div>
   </main>
