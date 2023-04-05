@@ -10,7 +10,7 @@
 
 </head>
 
-<body onload="configure();">
+<body>
 
   <header>
     <h1>Registro de refacciónes</h1>
@@ -25,16 +25,9 @@
     </div>
 <br><br>
     
-    <!--<div class="container2" style="align-items: center;">
-        <div id="my_camera">
-
-        </div>
-
-        <div id="results" style="visibility: hidden; position: absolute;">
-
-    </div>-->
+    <div id="my_camera">
     <video id="video" autoplay playsinline poster="https://flekk.com/img/cms/3autopartes_flekk_los_mejores_precios_2023.png";></video>
-
+    </div>
 
     <div class="container" style="text-align: center;">
       <br>
