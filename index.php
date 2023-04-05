@@ -25,15 +25,15 @@
     </div>
 <br><br>
     
-    <div class="container2" style="align-items: center;">
+    <!--<div class="container2" style="align-items: center;">
         <div id="my_camera">
 
         </div>
 
         <div id="results" style="visibility: hidden; position: absolute;">
 
-    </div>
-    <!--<video id="video" autoplay playsinline poster="https://flekk.com/img/cms/3autopartes_flekk_los_mejores_precios_2023.png";></video>
+    </div>-->
+    <video id="video" autoplay playsinline poster="https://flekk.com/img/cms/3autopartes_flekk_los_mejores_precios_2023.png";></video>
 
 
     <div class="container" style="text-align: center;">
