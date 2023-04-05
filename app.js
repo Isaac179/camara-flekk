@@ -1,4 +1,5 @@
-const video = document.getElementById('video');
+//const video = document.getElementById('video'); cambia el codigo para que funcione con un div
+const canvas = document.getElementById('canvas');
 const button = document.getElementById('button');
 const select = document.getElementById('select');
 let currentStream;
