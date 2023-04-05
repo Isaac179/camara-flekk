@@ -25,13 +25,10 @@
     </div>
 <br><br>
     
-    <div id="my_camera">
     <video id="video" autoplay playsinline poster="https://flekk.com/img/cms/3autopartes_flekk_los_mejores_precios_2023.png";></video>
-    </div>
 
     <div class="container" style="text-align: center;">
-      <br>
-      <button type="button" onclick="saveSnap();">Tomar foto</button>
+      <button type="button" onclick="saveSnap();">Tomar foto</button><br><br>
       <a href="image.php"><button type="button" name="button">Ver base de imagenes&#x2192;</button> </a>  </div>
 <div><br></div>
   </main>
