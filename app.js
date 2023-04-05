@@ -1,5 +1,4 @@
-//const canvas = document.getElementById('canvas'); cambia el codigo para que funcione con un div
-const canvas = document.getElementById('canvas');
+const video = document.getElementById('video');
 const button = document.getElementById('button');
 const select = document.getElementById('select');
 let currentStream;
@@ -15,7 +14,7 @@ function gotDevices(mediaDevices) {
   select.appendChild(document.createElement('option'));
   let count = 1;
   mediaDevices.forEach(mediaDevice => {
-    if (mediaDevice.kind === 'canvasinput') {
+    if (mediaDevice.kind === 'videoinput') {
       const option = document.createElement('option');
       option.value = mediaDevice.deviceId;
       const label = mediaDevice.label || `Camera ${count++}`;
@@ -24,27 +23,35 @@ function gotDevices(mediaDevices) {
       select.appendChild(option);
     }
   });
+} 
+
+//agrega una funcion para que este script funcione en una etiqueta div con el id "my_camera" en el html 
+function my_camera(){ 
+  var div = document.createElement('div');    
+  div.id = 'my_camera';
+  document.body.appendChild(div);
 }
+
 
 button.addEventListener('click', event => {
   if (typeof currentStream !== 'undefined') {
     stopMediaTracks(currentStream);
   }
-  const canvasConstraints = {};
+  const videoConstraints = {};
   if (select.value === '') {
-    canvasConstraints.facingMode = 'environment';
+    videoConstraints.facingMode = 'environment';
   } else {
-    canvasConstraints.deviceId = { exact: select.value };
+    videoConstraints.deviceId = { exact: select.value };
   }
   const constraints = {
-    canvas: canvasConstraints,
+    video: videoConstraints,
     audio: false
   };
   navigator.mediaDevices
     .getUserMedia(constraints)
     .then(stream => {
       currentStream = stream;
-      canvas.srcObject = stream;
+      video.srcObject = stream;
       return navigator.mediaDevices.enumerateDevices();
     })
     .then(gotDevices)
