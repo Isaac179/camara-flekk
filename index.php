@@ -25,8 +25,8 @@
     </div>
 <br><br>
         
-    <div class="container">
-        <div id="my_camera" id="canvas">
+    <div style="align-items: center; display: flex;flex-direction: column;">
+        <div id="my_camera">
         </div>
         <div id="results" style="visibility: hidden; position: absolute;">
             <!--<video id="video" autoplay playsinline poster="https://flekk.com/img/cms/3autopartes_flekk_los_mejores_precios_2023.png";></video>-->
@@ -48,7 +48,7 @@
 
   <script src="./app.js"></script>
   
-<script type="text/javascript" src="assets/webcam.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
 
 <script type="text/javascript">
 
