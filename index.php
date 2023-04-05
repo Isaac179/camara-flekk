@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body onload="configure();">
 
   <header>
     <h1>Registro de refacciónes</h1>
@@ -24,11 +24,18 @@
       </select>
     </div>
 <br><br>
-    
-    <video id="video" autoplay playsinline poster="https://flekk.com/img/cms/3autopartes_flekk_los_mejores_precios_2023.png";></video>
+        
+    <div class="container">
+        <div id="my_camera">
+        </div>
+        <div id="results" style="visibility: hidden; position: absolute;">
+            <!--<video id="video" autoplay playsinline poster="https://flekk.com/img/cms/3autopartes_flekk_los_mejores_precios_2023.png";></video>-->
+        </div>
+    </div>
 
+    <br><br>
     <div class="container" style="text-align: center;">
-      <button type="button" onclick="saveSnap();">Tomar foto</button><br><br>
+      <button type="button" onclick="saveSnap();">Tomar foto</button>
       <a href="image.php"><button type="button" name="button">Ver base de imagenes&#x2192;</button> </a>  </div>
 <div><br></div>
   </main>
