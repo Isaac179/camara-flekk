@@ -26,7 +26,7 @@
 <br><br>
         
     <div class="container">
-        <div id="my_camera">
+        <div id="my_camera" id="video">
         </div>
         <div id="results" style="visibility: hidden; position: absolute;">
             <!--<video id="video" autoplay playsinline poster="https://flekk.com/img/cms/3autopartes_flekk_los_mejores_precios_2023.png";></video>-->
