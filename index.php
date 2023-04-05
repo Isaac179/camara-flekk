@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body onload="configure();">
 
   <header>
     <h1>Registro de refacciónes</h1>
@@ -24,8 +24,18 @@
       </select>
     </div>
 <br><br>
-    <video id="video" autoplay playsinline poster="https://flekk.com/img/cms/3autopartes_flekk_los_mejores_precios_2023.png";></video>
     
+    <div class="container2 video" style="align-items: center;">
+        <div id="my_camera">
+
+        </div>
+
+        <div id="results" style="visibility: hidden; position: absolute;">
+
+    </div>
+    <!--<video id="video" autoplay playsinline poster="https://flekk.com/img/cms/3autopartes_flekk_los_mejores_precios_2023.png";></video>-->
+
+
     <div class="container" style="text-align: center;">
       <br>
       <button type="button" onclick="saveSnap();">Tomar foto</button>
@@ -40,6 +50,40 @@
   </footer>
 
   <script src="./app.js"></script>
+  
+<script type="text/javascript" src="assets/webcam.min.js"></script>
+
+<script type="text/javascript">
+
+    function configure() {
+        Webcam.set({
+            width: 480,
+            height: 360,
+            image_format: 'jpeg',
+            jpeg_quality: 90
+        });
+
+        Webcam.attach('#my_camera');
+    }
+
+    function saveSnap() {
+        Webcam.snap(function(data_uri){
+            document.getElementById('results').innerHTML = 
+                '<img id="webcam" src="'+data_uri+'">';
+        });
+
+        Webcam.reset();
+
+        var base64image = document.getElementById("webcam").src;
+        Webcam.upload(base64image,'function.php',function(code,text){
+            alert('Save Successfully');
+            document.location.href = "image.php"
+        });
+
+    }
+
+
+</script>
 </body>
 
 </html>
