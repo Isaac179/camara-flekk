@@ -86,9 +86,13 @@
             document.location.href = "image.php"
         });
 
+        
+
     }
 
-// Configura la cámara predeterminada
+    function change(){
+
+      // Configura la cámara predeterminada
 Webcam.set({
     width: 480,
     height: 360,
@@ -119,6 +123,9 @@ document.getElementById('camera-select').addEventListener('change', function() {
 
 // Inicializa la cámara
 Webcam.attach('#my_camera');
+
+    }
+
 
 </script>
 </body>
