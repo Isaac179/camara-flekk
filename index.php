@@ -32,7 +32,7 @@
 
             
 
-      <select style="color:#102f5b;" id="select">
+      <select style="color:#102f5b;" id="camera-select">
       <option></option>
       </select>
     </div>
@@ -95,7 +95,29 @@
 
     }
 
+// Obtiene las cámaras disponibles
+Webcam.get().then(function(cameras) {
+    // Muestra las opciones de cámara disponibles
+    for (var i in cameras) {
+        var camera = cameras[i];
+        var option = document.createElement('option');
+        option.value = camera.id;
+        option.innerHTML = camera.name;
+        document.getElementById('camera-select').appendChild(option);
+    }
+});
 
+// Cambia la cámara cuando se selecciona una nueva opción
+document.getElementById('camera-select').addEventListener('change', function() {
+    var cameraId = this.value;
+    Webcam.set({
+        device: cameraId
+    });
+    Webcam.attach('#my_camera');
+});
+
+// Inicializa la cámara
+Webcam.attach('#my_camera');
 </script>
 </body>
 
