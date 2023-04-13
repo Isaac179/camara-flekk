@@ -49,33 +49,36 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
 
 <script type="text/javascript">
-    function configure() {
-        Webcam.set({
-            width: 480,
-            height: 360,
-            image_format: 'jpeg',
-            jpeg_quality: 90,
-            facingMode: 'environment' // Definimos la cámara trasera
-        });
+function configure() {
+    Webcam.set({
+        width: 480,
+        height: 360,
+        image_format: 'jpeg',
+        jpeg_quality: 90,
+        constraints: {
+            facingMode: 'environment'
+        }
+    });
 
-        Webcam.attach('#my_camera');
-    }
+    Webcam.attach('#my_camera');
+}
 
-    function saveSnap() {
-        Webcam.snap(function(data_uri){
-            document.getElementById('results').innerHTML = 
-                '<img id="webcam" src="'+data_uri+'">';
-        });
+function saveSnap() {
+    Webcam.snap(function(data_uri){
+        document.getElementById('results').innerHTML = 
+            '<img id="webcam" src="'+data_uri+'">';
+    });
 
-        Webcam.reset();
+    Webcam.reset();
 
-        var base64image = document.getElementById("webcam").src;
-        Webcam.upload(base64image,'function.php',function(code,text){
-            alert('Imagen guardada con exito');
-            document.location.href = "image.php"
-        });
+    var base64image = document.getElementById("webcam").src;
+    Webcam.upload(base64image,'function.php',function(code,text){
+        alert('Imagen guardada con exito');
+        document.location.href = "image.php"
+    });
 
-    }
+}
+
 </script>
 
 
