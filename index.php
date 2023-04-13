@@ -12,8 +12,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
-
 </head>
 
 <body onload="configure();">
@@ -23,21 +21,31 @@
   </header>
 
   <main>
-  <label for="camera-select">Seleccionar cámara:</label>
-  <select id="camera-select"></select>
-  <div id="my_camera"></div>
-  <div id="results"></div>
+    <div class="controls">
+      <button style="color:#102f5b;" id="button">Seleccionar camara</button>
+      <div class="mostrar visible-xs">
+        <br>
+      </div> 
 
+
+
+
+            
+
+      <select style="color:#102f5b;" id="select">
+      <option></option>
+      </select>
+    </div>
 <br><br>
         
     <div style="align-items: center; display: flex;flex-direction: column;">
         <div id="my_camera">
         </div>
-        <!--
-        <video id="video" autoplay playsinline poster="https://flekk.com/img/cms/3autopartes_flekk_los_mejores_precios_2023.png";></video>  
-        <div id="results" style="visibility: hidden; position: absolute;"></div>-->
-    </div><br>
-    
+        <div id="results" style="visibility: hidden; position: absolute;">
+            <!--<video id="video" autoplay playsinline poster="https://flekk.com/img/cms/3autopartes_flekk_los_mejores_precios_2023.png";></video>-->
+        </div>
+    </div>
+    <br>
     <form  style="align-items: center; display: flex;flex-direction: column;" method="POST" action="function.php">
       <input type="TEXT" name="nombre" placeholder="Ingresa el SKU"><br>
     <br>
@@ -54,15 +62,13 @@
     </p>
   </footer>
 
-  <!--<script src="./app.js"></script>-->
+  <script src="./app.js"></script>
   
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
 
 <script type="text/javascript">
 
-
     function configure() {
-      
         Webcam.set({
             width: 480,
             height: 360,
@@ -89,30 +95,6 @@
 
     }
 
-    //CAMBIO CAMARA
-    // Obtiene las cámaras disponibles
-Webcam.get().then(function(cameras) {
-    // Muestra las opciones de cámara disponibles
-    for (var i in cameras) {
-        var camera = cameras[i];
-        var option = document.createElement('option');
-        option.value = camera.id;
-        option.innerHTML = camera.name;
-        document.getElementById('camera-select').appendChild(option);
-    }
-});
-
-// Cambia la cámara cuando se selecciona una nueva opción
-document.getElementById('camera-select').addEventListener('change', function() {
-    var cameraId = this.value;
-    Webcam.set({
-        device: cameraId
-    });
-    Webcam.attach('#my_camera');
-});
-
-// Inicializa la cámara
-Webcam.attach('#my_camera'); 
 
 </script>
 </body>
