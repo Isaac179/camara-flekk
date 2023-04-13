@@ -49,37 +49,13 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
 
 <script type="text/javascript">
-
     function configure() {
         Webcam.set({
             width: 480,
             height: 360,
             image_format: 'jpeg',
-            jpeg_quality: 90
-        });
-
-        Webcam.attach('#my_camera');
-    }
-
-    function switchCamera() {
-        Webcam.reset();
-        var videoConstraints = {};
-        if(Webcam.camera === 'user') {
-            videoConstraints = {
-                deviceId: {
-                    exact: 'environment'
-                }
-            };
-        } else {
-            videoConstraints = {
-                deviceId: {
-                    exact: 'user'
-                }
-            };
-        }
-
-        Webcam.set({
-            video: videoConstraints
+            jpeg_quality: 90,
+            facingMode: 'environment' // Definimos la cámara trasera
         });
 
         Webcam.attach('#my_camera');
@@ -101,6 +77,7 @@
 
     }
 </script>
+
 
 </body>
 
