@@ -8,6 +8,10 @@
   <title>Captura evidencias autopartes</title>
   <link rel="stylesheet" href="./app.css" />
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 
 <body onload="configure();">
@@ -18,26 +22,33 @@
 
   <main>
     <div class="controls">
-      <button id="button">Seleccionar camara</button>
-      <select id="select">
-        <option></option>
+      <button style="color:#102f5b;" id="button">Seleccionar camara</button>
+      <div class="mostrar visible-xs">
+        <br>
+      </div> 
+
+      <select style="color:#102f5b;" id="select">
+      <option></option>
       </select>
     </div>
 <br><br>
         
     <div style="align-items: center; display: flex;flex-direction: column;">
-        <div id="my_camera">
+        <div id="my_camera" id="container">
         </div>
         <div id="results" style="visibility: hidden; position: absolute;">
             <!--<video id="video" autoplay playsinline poster="https://flekk.com/img/cms/3autopartes_flekk_los_mejores_precios_2023.png";></video>-->
         </div>
     </div>
-
-    <br><br>
+    <br>
+    <form  style="align-items: center; display: flex;flex-direction: column;" method="POST" action="function.php">
+      <input type="TEXT" name="nombre" placeholder="Ingresa el SKU"><br>
+    <br>
     <div class="container" style="text-align: center;">
-      <button type="button" onclick="saveSnap();">Tomar foto</button>
+      <button type="button SUBMIT" onclick="saveSnap();">Tomar foto</button>
       <a href="image.php"><button type="button" name="button">Ver base de imagenes&#x2192;</button> </a>  </div>
-<div><br></div>
+    <div><br></div>
+  </form>
   </main>
   <footer>
     
@@ -73,13 +84,11 @@
 
         var base64image = document.getElementById("webcam").src;
         Webcam.upload(base64image,'function.php',function(code,text){
-            alert('Save Successfully');
+            alert('Imagen guardada ✓ tomar otra?');
             document.location.href = "image.php"
         });
 
     }
-
-
 </script>
 </body>
 

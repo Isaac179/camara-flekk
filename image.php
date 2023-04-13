@@ -1,9 +1,4 @@
-<?php 
-
-require 'function.php';
-
-?>
-
+<?php require 'function.php';?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +6,7 @@ require 'function.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Image Database</title>
+    <title>Registros flekk</title>
 
     <style media="screen">
         a button {
@@ -29,9 +24,9 @@ require 'function.php';
 <a href="../camara-flekk"><button type="button" name="button">Tomar nuevo registro</button></a><br><br>
     <table border = 1 cellspacing = 0 cellpadding = 10>
         <tr>
-            <td>#</td>
-            <td>Date & Time</td>
-            <td>Image</td>
+            <td>ID</td>
+            <td>Hora de captura</td>
+            <td>Imagenes</td>
         </tr>
 
         <?php 

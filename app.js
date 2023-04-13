@@ -1,11 +1,15 @@
-const video = document.getElementById('video');
+const container = document.getElementById('container');
 const button = document.getElementById('button');
 const select = document.getElementById('select');
 let currentStream;
 
-function stopMediaTracks(stream) {
+function stopMediaTracks(stream, element) {
   stream.getTracks().forEach(track => {
-    track.stop();
+    if (track.kind === 'video') {
+      element.querySelector('video').srcObject = null;
+    } else if (track.kind === 'audio') {
+      track.stop();
+    }
   });
 }
 
@@ -25,17 +29,9 @@ function gotDevices(mediaDevices) {
   });
 } 
 
-//agrega una funcion para que este script funcione en una etiqueta div con el id "my_camera" en el html 
-function my_camera(){ 
-  var div = document.createElement('div');    
-  div.id = 'my_camera';
-  document.body.appendChild(div);
-}
-
-
 button.addEventListener('click', event => {
   if (typeof currentStream !== 'undefined') {
-    stopMediaTracks(currentStream);
+    stopMediaTracks(currentStream, container);
   }
   const videoConstraints = {};
   if (select.value === '') {
@@ -51,7 +47,9 @@ button.addEventListener('click', event => {
     .getUserMedia(constraints)
     .then(stream => {
       currentStream = stream;
+      const video = document.createElement('video');
       video.srcObject = stream;
+      container.appendChild(video);
       return navigator.mediaDevices.enumerateDevices();
     })
     .then(gotDevices)
