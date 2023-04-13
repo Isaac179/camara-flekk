@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+
 
 </head>
 
@@ -26,11 +28,6 @@
       <div class="mostrar visible-xs">
         <br>
       </div> 
-
-
-
-
-            
 
       <select style="color:#102f5b;" id="camera-select">
       <option></option>
@@ -62,10 +59,6 @@
     </p>
   </footer>
 
-  <script src="./app.js"></script>
-  
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
-
 <script type="text/javascript">
 
     function configure() {
@@ -95,6 +88,14 @@
 
     }
 
+// Configura la cámara predeterminada
+Webcam.set({
+    width: 480,
+    height: 360,
+    image_format: 'jpeg',
+    jpeg_quality: 90
+});
+
 // Obtiene las cámaras disponibles
 Webcam.get().then(function(cameras) {
     // Muestra las opciones de cámara disponibles
@@ -118,6 +119,7 @@ document.getElementById('camera-select').addEventListener('change', function() {
 
 // Inicializa la cámara
 Webcam.attach('#my_camera');
+
 </script>
 </body>
 
