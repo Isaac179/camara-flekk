@@ -13,3 +13,4 @@ if(isset($_FILES["webcam"]["tmp_name"])) {
     mysqli_query($conn, $query);
 }
 
+?>

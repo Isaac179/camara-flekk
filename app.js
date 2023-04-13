@@ -1,15 +1,41 @@
-const container = document.getElementById('container');
+//INICIA TOMAR FOTO
+function configure() {
+  Webcam.set({
+      width: 480,
+      height: 360,
+      image_format: 'jpeg',
+      jpeg_quality: 90
+  });
+
+  Webcam.attach('#my_camera');
+}
+
+function saveSnap() {
+  Webcam.snap(function(data_uri){
+      document.getElementById('results').innerHTML = 
+          '<img id="webcam" src="'+data_uri+'">';
+  });
+
+  Webcam.reset();
+
+  var base64image = document.getElementById("webcam").src;
+  Webcam.upload(base64image,'function.php',function(code,text){
+      alert('Imagen guardada ✓ tomar otra?');
+      document.location.href = "image.php"
+  });
+
+}
+//TERMINA TOMARFOTO
+
+//INICIA CAMBIO CAMARA
+const video = document.getElementById('video');
 const button = document.getElementById('button');
 const select = document.getElementById('select');
 let currentStream;
 
-function stopMediaTracks(stream, element) {
+function stopMediaTracks(stream) {
   stream.getTracks().forEach(track => {
-    if (track.kind === 'video') {
-      element.querySelector('video').srcObject = null;
-    } else if (track.kind === 'audio') {
-      track.stop();
-    }
+    track.stop();
   });
 }
 
@@ -27,11 +53,11 @@ function gotDevices(mediaDevices) {
       select.appendChild(option);
     }
   });
-} 
+}
 
 button.addEventListener('click', event => {
   if (typeof currentStream !== 'undefined') {
-    stopMediaTracks(currentStream, container);
+    stopMediaTracks(currentStream);
   }
   const videoConstraints = {};
   if (select.value === '') {
@@ -47,9 +73,7 @@ button.addEventListener('click', event => {
     .getUserMedia(constraints)
     .then(stream => {
       currentStream = stream;
-      const video = document.createElement('video');
       video.srcObject = stream;
-      container.appendChild(video);
       return navigator.mediaDevices.enumerateDevices();
     })
     .then(gotDevices)
@@ -59,3 +83,5 @@ button.addEventListener('click', event => {
 });
 
 navigator.mediaDevices.enumerateDevices().then(gotDevices);
+
+
