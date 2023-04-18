@@ -8,7 +8,7 @@
 </head>
 
 <style>
-    @charset "UTF-8";
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:400,700|Cabin+Condensed:400,600");
 
 body {
@@ -308,8 +308,8 @@ i.icon-24-scan {
     width: 16px;
   }
 }
-
 </style>
+
 <body>
 <header>
   <div class="headline">
@@ -406,8 +406,12 @@ i.icon-24-scan {
   </p>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/7.3.0/adapter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+
 <script>
-    $(function() {
+$(function() {
     var resultCollector = Quagga.ResultCollector.create({
         capture: true,
         capacity: 20,
@@ -704,7 +708,6 @@ i.icon-24-scan {
     });
 
 });
-
 </script>
 </body>
 </html>
