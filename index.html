@@ -1,48 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=0.85">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="./app.css" />
-  <!-- <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> -->
-  <title>Codbar Scanner</title>
 
-  </head>
-  <body>
-    <header>
-      <h3>ESCANEA EL CODÍGO DE TU PIEZA</h3>
-    </header>
-  
-    <main>
-  
-  <br><br>
-          
-  <div id="overlay" class="video-wrapper">
-    <a href="javascript:void(0)" class="closebtn" onclick="stop()"> &times;</a>
-    <video playsinline autoplay muted style="pointer-events: none;"></video>
-    <div id="inner"></div>
-    <div id="redline"></div>
-    <canvas id="overlay-canvas" width=640 height=480></canvas>
-  </div>
-  <ul id="decoded">
-  </ul>
-  <canvas id="stream-canvas" width=640 height=480
-   style="display:none;width: 640px;height: 480px;align: center;"></canvas>
-  <div class="scan-btn-wrapper">
-    <button id="trigger_btn" onclick="localMediaStream ? stop():start()"></button>
-  </div>
-  <script src="main.js"></script>
-  
-    </main>
-    <footer>
-      
-      <p>flekk camara
-        <a href="mailto:icalderon@flekk.com">@webmaster</a>
-      </p>
-    </footer>
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd"> 
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.85">
+    <link rel="stylesheet" href="./app.css" />
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> -->
+    <title>JS in-browser barcode reader</title>
+    
+    </head>
+    <body>
+      <h1>Barcode scanner</h1>
+      <div id="overlay" class="video-wrapper">
+        <a href="javascript:void(0)" class="closebtn" onclick="stop()"> &times;</a>
+        <video playsinline autoplay muted style="pointer-events: none;"></video>
+        <div id="inner"></div>
+        <div id="redline"></div>
+        <canvas id="overlay-canvas" width=640 height=480></canvas>
+      </div>
+      <ul id="decoded">
+      </ul>
+      <canvas id="stream-canvas" width=640 height=480
+       style="display:none;width: 640px;height: 480px;"></canvas>
+      <div class="scan-btn-wrapper">
+        <button id="trigger_btn" onclick="localMediaStream ? stop():start()"></button>
+      </div>
+      <script src="main.js"></script>
+    </body>
 </html>
-
