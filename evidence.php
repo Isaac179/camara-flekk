@@ -15,7 +15,7 @@
   <header><h1>Registro de refacciónes</h1></header>
   <main><br><br>
     <div style="align-items: center; display: flex;flex-direction: column;">
-    <input style="padding: 5px;width: 300px;text-transform:uppercase;border-radius: 20px;" placeholder="Referencia pedido: ZSBSGIELC" type="text"><br>
+    <input style="padding: 5px;width: 300px;text-transform:uppercase;border-radius: 20px;" placeholder="Ingresa Referencia pedido: ZSBSGIELC" type="text"><br>
         <div id="my_camera">
         </div>
         <div id="results" style="visibility: hidden; position: absolute;">
