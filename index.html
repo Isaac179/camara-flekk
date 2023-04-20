@@ -15,28 +15,27 @@
     <header>
       <h3>ESCANEA EL CODÍGO DE TU PIEZA</h3>
     </header>
-  
-    <main>
-  
-  <br><br>
+  <main>
+     <br><br>
           
-  <div id="overlay" class="video-wrapper">
-    <a href="javascript:void(0)" class="closebtn" onclick="stop()"> &times;</a>
-    <video id="main" playsinline autoplay muted style="pointer-events: none;"></video>
-    <div id="inner"></div>
-    <div id="redline"></div>
-    <canvas id="overlay-canvas" width=640 height=480></canvas>
-  </div>
-  <ul id="decoded">
-  </ul>
-  <canvas id="stream-canvas" width=640 height=280
-   style="display:none;width: 640px;height: 480px;align: center;"></canvas>
-  <div style="align-items: center; display: flex;flex-direction: column;" class="scan-btn-wrapper">
-    <button id="trigger_btn" onclick="localMediaStream ? stop():start()"></button>
-  </div>
-  <script src="main.js"></script>
+      <div id="overlay" class="video-wrapper">
+        <a href="javascript:void(0)" class="closebtn" onclick="stop()"> &times;</a>
+        <video id="main" playsinline autoplay muted style="pointer-events: none;"></video>
+        <div id="inner"></div>
+        <div id="redline"></div>
+        <canvas id="overlay-canvas" width=640 height=480></canvas>
+      </div>
+      <ul id="decoded">
+      </ul>
+      <canvas id="stream-canvas" width=640 height=280
+      style="display:none;width: 640px;height: 480px;align: center;"></canvas>
+      <div style="align-items: center; display: flex;flex-direction: column;" class="scan-btn-wrapper">
+        <button id="trigger_btn" onclick="localMediaStream ? stop():start()"></button>
+      </div>
+
+      <script src="main.js"></script>
   
-    </main>
+  </main>
     <footer>
       
       <p>flekk camara
