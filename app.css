@@ -191,3 +191,12 @@ footer a {
           ::-webkit-media-controls-enclosure {
               display:none !important;
             }
+
+            input#orden, #sku{
+              padding: 5px;
+              width: 280px;
+              text-transform:uppercase;
+              border-radius: 20px;padding:10px;
+            }
+
+            

@@ -27,6 +27,8 @@
             <td>ID</td>
             <td>Hora de captura</td>
             <td>Imagenes</td>
+            <td>Numero de orden</td>
+            <td>SKU</td>
         </tr>
 
         <?php 
@@ -39,6 +41,8 @@
             <td><?php echo $i++; ?></td>
             <td><?php echo $row["date"] ?></td>
             <td><img src="img/<?php echo $row["image"] ?>" width=200 title="<?php echo $row["image"] ?>"></td>
+            <td><?php echo $row["orden"] ?></td>
+            <td><?php echo $row["sku"] ?></td>
         </tr>
         <?php endforeach; ?>
     </table>

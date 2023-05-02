@@ -13,19 +13,23 @@
 
 <body onload="configure();">
   <header><h1>Registro de refacciónes</h1></header>
+ 
   <main><br><br>
     <div style="align-items: center; display: flex;flex-direction: column;">
-    <input style="padding: 5px;width: 280px;text-transform:uppercase;border-radius: 20px;padding:10px" placeholder="Referencia Pedido ej: ZSBSGIELC" type="text"><br>
-    <div class="container" style="text-align: center;">
-      <button type="button SUBMIT" onclick="saveSnap();">Tomar foto</button>
-      </div>
-    <div><br></div>
+    <form method="post" action="insertar.php">
+      <input id="sku" name="sku" placeholder="SKU: ZSBSGIELC" type="text"><br>
+      <input id="orden" name="orden" placeholder="Numero de orden: 7024" type="text">
+      <button type="submit">Insertar</button>
+    </form>
+
+
         <div id="my_camera">
         </div>
         <div id="results" style="visibility: hidden; position: absolute;">
         </div>
     </div><br>
     <div class="container" style="text-align: center;">
+      <button type="button SUBMIT" onclick="saveSnap();">Tomar foto</button>
       <a href="image.php"><button type="button" name="button">Ver base de imagenes&#x2192;</button> </a>  </div>
     <div><br></div>
   </main>
