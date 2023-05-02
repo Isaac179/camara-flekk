@@ -17,7 +17,7 @@ $orden= $_POST["orden"];
 $sku= $_POST["sku"];
 
 // Crea una consulta SQL para insertar el texto en la tabla correspondiente
-$sql = "INSERT INTO tbl_image (sku) VALUES ('$sku')";
+$sql = "INSERT INTO tbl_image (orden, sku) VALUES ('$orden','$sku')";
 
 // Ejecuta la consulta SQL
 if ($conn->query($sql) === TRUE) {
