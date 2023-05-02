@@ -34,7 +34,13 @@
       </div>
 
       <script src="main.js"></script>
-  
+      <script src="main.js"></script>
+      <script>
+        Quagga.onDetected(function(result) {
+          var sku = document.getElementById("decoded").innerHTML;
+          window.location.href = "evidence.php?sku=" + sku;
+        });
+      </script>
   </main>
     <footer>
       

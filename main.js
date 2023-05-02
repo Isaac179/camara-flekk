@@ -118,3 +118,4 @@ function renderData(ctx, data, x, y) {
       });
   
   }
+

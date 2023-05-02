@@ -11,7 +11,6 @@ if(isset($_FILES["webcam"]["tmp_name"])) {
     $query = "INSERT INTO tbl_image VALUES('','$date','$imageName','','')";
     mysqli_query($conn, $query);
 }
-
 ?>
 
 

@@ -1,3 +1,7 @@
+<?php
+$sku = $_GET['sku']; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +21,7 @@
   <main><br><br>
     <div style="align-items: center; display: flex;flex-direction: column;">
     <form method="post" action="insertar.php">
-      <input id="sku" name="sku" placeholder="SKU: ZSBSGIELC" type="text"><br>
+    <input id="sku" name="sku" placeholder="SKU: ZSBSGIELC" type="text"><br>
       <input id="orden" name="orden" placeholder="Numero de orden: 7024" type="text">
       <button type="submit">Insertar</button>
     </form>
