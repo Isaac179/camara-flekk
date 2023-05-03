@@ -199,4 +199,6 @@ footer a {
               border-radius: 20px;padding:10px;
             }
 
-            
+            div#my_camera, #botones{
+              display:none;
+            }
