@@ -7,6 +7,7 @@ var overlay_ctx = document.getElementById('overlay-canvas').getContext('2d')
 var list = document.querySelector('ul#decoded');
 var modal = document.getElementById('overlay')
 var worker = new Worker('zbar-processor.js');
+
 worker.onmessage = async function(event) {
     if (event.data.length == 0) return;
     var d = event.data[0];
@@ -16,6 +17,8 @@ worker.onmessage = async function(event) {
     drawPoly(overlay_ctx, d[2])
     renderData(overlay_ctx, d[1], d[2][0], d[2][1])
     await stop()
+    
+    document.getElementById('sku').value = d[1];
     // renderData(overlay_ctx, d[1], d[2][0], d[2][1] - 10)
 };
 
@@ -118,4 +121,3 @@ function renderData(ctx, data, x, y) {
       });
   
   }
-
