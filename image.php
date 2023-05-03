@@ -25,9 +25,9 @@
     <table border = 1 cellspacing = 0 cellpadding = 10>
         <tr>
             <td>ID</td>
-            <td>Hora de captura</td>
-            <td>Imagenes</td>
-            <td>Numero de orden</td>
+            <td>FECHA</td>
+            <td>FOTOS</td>
+            <td>ORDEN #</td>
             <td>SKU</td>
         </tr>
 

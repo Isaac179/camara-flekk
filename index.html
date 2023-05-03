@@ -12,17 +12,11 @@
 </head>
 
 <body>
-  <header><h1>Registro de refacciónes</h1></header>
+  <header><h2>1 ESCANEA EL CÓDIGO <br> PRECIONANDO LA IMAGEN</h2S></header>
  
   <main><br><br>
     <div style="align-items: center; display: flex;flex-direction: column;">
-    <form method="post" action="insertar.php" id="f1">
-
-      <input id="sku" name="sku" placeholder="SKU: ZSBSGIELC" type="text"><br>
-      <input id="orden" name="orden" placeholder="Orden ejemplo: 7024" type="text">
-      <!--<button type="submit">Insertar</button>--><br><br>
-    </form>
-   
+ 
  <div id="barcode">   
       <div id="overlay" class="video-wrapper">
           <a href="javascript:void(0)" class="closebtn" onclick="stop()"> &times;</a>
@@ -38,8 +32,15 @@
         <div style="align-items: center; display: flex;flex-direction: column;" class="scan-btn-wrapper">
           <button id="trigger_btn" onclick="localMediaStream ? stop():start()"></button>
       </div>
- </div>     
-</div>
+
+        <div class="container" style="text-align: center;" id="botones">
+          <form method="post" action="insertar.php" id="f1">
+            <input id="sku" name="sku" placeholder="SKU EJEMPLO: ZSBSGIELC" type="text"><br>
+            <input id="orden" name="orden" placeholder="Orden ejemplo: 7024" type="text"><br><br>
+          </form>
+          <a href="evidencia2.php"><button type="button" name="button">REGISTRO MANUAL&#x2192;</button> </a>  
+        
+        </div>
 
   </main>
   <footer>
