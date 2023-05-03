@@ -185,6 +185,10 @@ footer a {
             cursor: pointer;
             box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
           }
+
+          #my_camera{
+            background-image: url('https://flekk.com/img/cms/flekk 2D product barcode migration-GS1 US.png');
+          }
           ::-webkit-media-controls {
               display:none !important;
             }
@@ -199,6 +203,6 @@ footer a {
               border-radius: 20px;padding:10px;
             }
 
-            div#my_camera, #botones{
+            /*div#my_camera, #botones{
               display:none;
-            }
+            }*/

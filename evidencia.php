@@ -1,3 +1,5 @@
+<?php $sku = $_GET['sku'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,35 +13,29 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body onload="configure();">
   <header><h1>Registro de refacciónes</h1></header>
  
   <main><br><br>
     <div style="align-items: center; display: flex;flex-direction: column;">
     <form method="post" action="insertar.php" id="f1">
 
-      <input id="sku" name="sku" placeholder="SKU: ZSBSGIELC" type="text"><br>
+      <input id="sku" name="sku" placeholder="SKU: ZSBSGIELC" type="text" value="<?php echo $sku ?>"><br>
       <input id="orden" name="orden" placeholder="Orden ejemplo: 7024" type="text">
-      <!--<button type="submit">Insertar</button>--><br><br>
+      <button type="submit">Insertar</button><br><br>
     </form>
    
- <div id="barcode">   
-      <div id="overlay" class="video-wrapper">
-          <a href="javascript:void(0)" class="closebtn" onclick="stop()"> &times;</a>
-          <video id="main" playsinline autoplay muted style="pointer-events: none;"></video>
-          <div id="inner"></div>
-          <div id="redline"></div>
-          <canvas id="overlay-canvas" width=640 height=480></canvas>
+
+      
+        <div id="my_camera">
         </div>
-        <ul style="display:none" id="decoded">
-        </ul>
-        <canvas id="stream-canvas" width=640 height=280
-        style="display:none;width: 640px;height: 480px;align: center;"></canvas>
-        <div style="align-items: center; display: flex;flex-direction: column;" class="scan-btn-wrapper">
-          <button id="trigger_btn" onclick="localMediaStream ? stop():start()"></button>
-      </div>
- </div>     
-</div>
+        <div id="results" style="visibility: hidden; position: absolute;">
+        </div>
+    </div><br>
+    <div class="container" style="text-align: center;" id="botones">
+      <button type="button SUBMIT" onclick="saveSnap();">Tomar foto</button>
+      <a href="image.php"><button type="button" name="button">Ver base de imagenes&#x2192;</button> </a>  </div>
+    <div><br></div>
 
   </main>
   <footer>

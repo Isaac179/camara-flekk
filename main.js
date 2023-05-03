@@ -19,11 +19,10 @@ worker.onmessage = async function(event) {
     await stop()
     
     document.getElementById('sku').value = d[1];
-    document.getElementById('my_camera').style.display = 'block';
-    document.getElementById('botones').style.display = 'block';
-    document.getElementById('barcode').style.display = 'none';
-    //  window.location.href = "evidencia.html?sku=" + d[1];
-    //renderData(overlay_ctx, d[1], d[2][0], d[2][1] - 10)
+    window.location.href = "evidencia.php?sku=" + encodeURIComponent(d[1]);
+    //document.getElementById('my_camera').style.display = 'block';
+    //document.getElementById('botones').style.display = 'block';
+    //document.getElementById('barcode').style.display = 'none';
 };
 
 function snapshot() {
