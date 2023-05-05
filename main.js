@@ -118,9 +118,9 @@ function renderData(ctx, data, x, y) {
       Webcam.reset();
   
       var base64image = document.getElementById("webcam").src;
-      Webcam.upload(base64image,'function.php',function(code,text){
+      Webcam.upload(base64image,'insertar.php',function(code,text){
           alert('Imagen guardada con exito');
-          document.location.href = "image.php"
+          document.location.href = "insertar.php"
       });
   
   }

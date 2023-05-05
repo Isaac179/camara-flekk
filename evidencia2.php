@@ -16,15 +16,13 @@
  
   <main><br><br>
     <div style="align-items: center; display: flex;flex-direction: column;">
-    <form method="post" action="insertar2.php" id="f1">
+    <form method="post" action="insertar.php" id="f1">
 
       <input id="sku" name="sku" placeholder="SKU EJEMPLO: ZSBSGIELC" type="text"><br>
       <input id="orden" name="orden" placeholder="Orden ejemplo: 7024" type="text">
       <button type="submit">Insertar</button><br><br>
     </form>
    
-
-      
         <div id="my_camera">
         </div>
         <div id="results" style="visibility: hidden; position: absolute;">
@@ -32,7 +30,7 @@
     </div><br>
     <div class="container" style="text-align: center;" id="botones">
       <button type="button SUBMIT" onclick="saveSnap();">Tomar foto</button>
-      <a href="image.php"><button type="button" name="button">Ver base de imagenes&#x2192;</button> </a>  </div>
+      <a href="insertar.php"><button type="button" name="button">Ver base de imagenes&#x2192;</button> </a>  </div>
     <div><br></div>
 
   </main>
