@@ -7,6 +7,7 @@ var overlay_ctx = document.getElementById('overlay-canvas').getContext('2d')
 var list = document.querySelector('ul#decoded');
 var modal = document.getElementById('overlay')
 var worker = new Worker('zbar-processor.js');
+var globalSku = null;
 
 worker.onmessage = async function(event) {
     if (event.data.length == 0) return;
@@ -18,7 +19,7 @@ worker.onmessage = async function(event) {
     renderData(overlay_ctx, d[1], d[2][0], d[2][1])
     await stop()
     
-    document.getElementById('sku').value = d[1];
+    //document.getElementById('sku').value = d[1];
     window.location.href = "evidencia.php?sku=" + encodeURIComponent(d[1]);
     //document.getElementById('my_camera').style.display = 'block';
     //document.getElementById('botones').style.display = 'block';
@@ -118,9 +119,31 @@ function renderData(ctx, data, x, y) {
       Webcam.reset();
   
       var base64image = document.getElementById("webcam").src;
-      Webcam.upload(base64image,'insertar.php',function(code,text){
-          alert('Imagen guardada con exito');
-          document.location.href = "insertar.php"
+      var sku = document.getElementById("sku").value;
+          Webcam.upload(base64image,'saveinfo.php',function(code,text){
+          alert('Imagen guardada con exito - '+code+ ' - ' +text);
+          document.location.href = "evidencia2.php?sku="+sku+"&idrecord="+text;
       });
   
   }
+
+    function lastStep() {
+        var formData = new FormData();
+        var sku = document.getElementById("sku").value;
+        var idrecord = document.getElementById("idrecord").value;
+        var orden = document.getElementById("orden").value;
+
+        formData.append("sku", sku);
+        formData.append("idrecord", idrecord);
+        formData.append("orden", orden);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "saveinfo.php", true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                alert(xhr.responseText);
+                document.location.href = "evidencia2.php?sku="+sku+"&idrecord="+idrecord;
+            }
+        }
+        xhr.send(formData);
+    }

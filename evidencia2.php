@@ -12,34 +12,29 @@
 </head>
 
 <body onload="configure();">
-  <header><h3>2 CAPTURA N° ORDEN Y ESTADO DE LA PIEZA</h3></header>
+  <header><h3> 3 INGRESA EL NÚMERO ORDEN</h3></header>
  
   <main><br><br>
     <div style="align-items: center; display: flex;flex-direction: column;">
-    <form method="post" action="insertar.php" id="f1">
+    <form method="post" enctype="multipart/form-data">
 
-      <input id="sku" name="sku" placeholder="SKU EJEMPLO: ZSBSGIELC" type="text"><br>
-      <input id="orden" name="orden" placeholder="Orden ejemplo: 7024" type="text">
-      <button type="submit">Insertar</button><br><br>
-    </form>
-   
-        <div id="my_camera">
-        </div>
-        <div id="results" style="visibility: hidden; position: absolute;">
-        </div>
+      <input id="idrecord" type="hidden" value="<?= $_GET['idrecord'] ?>">
+      <input id="orden" name="orden" placeholder="Orden ejemplo: 7024" type="text" value=""><br><br>
+      <input id="sku" name="sku" placeholder="SKU EJEMPLO: ZSBSGIELC" type="text" value="<?= $_GET['sku'] ?>"><br>
+      
+
     </div><br>
     <div class="container" style="text-align: center;" id="botones">
-      <button type="button SUBMIT" onclick="saveSnap();">Tomar foto</button>
+      <button type="button" onclick="lastStep();" href="insertar.php"><b>ENVIAR AHORA&#x2192;</b></button><br><br>
       <a href="insertar.php"><button type="button" name="button">Ver base de imagenes&#x2192;</button> </a>  </div>
     <div><br></div>
-
+    </form>
   </main>
   <footer>
     <p>flekk camara
       <a href="mailto:icalderon@flekk.com">@webmaster</a>
     </p>
   </footer>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
