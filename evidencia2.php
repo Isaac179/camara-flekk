@@ -19,6 +19,10 @@
     <form method="post" enctype="multipart/form-data">
 
       <input id="idrecord" type="hidden" value="<?= $_GET['idrecord'] ?>">
+
+      <select id="orden2" name="orden" placeholder="Orden ejemplo: 7024" type="text" value="">
+        <option value="">Seleccione una orden</option>
+      </select><br><br>
       <input id="orden" name="orden" placeholder="Orden ejemplo: 7024" type="text" value=""><br><br>
       <input id="sku" name="sku" placeholder="SKU EJEMPLO: ZSBSGIELC" type="text" value="<?= $_GET['sku'] ?>"><br>
       
@@ -29,6 +33,7 @@
       <a href="insertar.php"><button type="button" name="button">Ver base de imagenes&#x2192;</button> </a>  </div>
     <div><br></div>
     </form>
+    
   </main>
   <footer>
     <p>flekk camara
@@ -36,5 +41,36 @@
     </p>
   </footer>
   <script src="main.js"></script>
+
+<script>
+  $(document).ready(function() {
+      // URL del API de Prestashop para obtener las últimas órdenes
+      var url = "https://flekk.com/api/orders?sort=id_DESC&limit=10";
+
+      // Credenciales de acceso al API (clave API)
+      var apiKey = "GQ94F8GM558BSEVIP1AHMYA94NYRTRE7";
+
+      // Hacer la petición GET al API de Prestashop
+      $.ajax({
+        url: url,
+        type: "GET",
+        headers: { "Authorization": "Basic " + btoa(apiKey + ":") },
+        success: function(response) {
+          // Si la petición es exitosa, mostrar las órdenes en el elemento select
+          var select = $("#orden");
+          select.empty(); // Vaciar el elemento select
+          select.append('<option value="">Seleccione una orden</option>');
+          $.each(response.orders, function(i, order) {
+            select.append('<option value="' + order.id + '">' + order.reference + '</option>');
+          });
+        },
+        error: function(xhr, status, error) {
+          // Si hay algún error, mostrarlo en la consola del navegador
+          console.log("Error al obtener las órdenes de Prestashop: " + error);
+        }
+      });
+    });
+</script>
+
 </body>
 </html>

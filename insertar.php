@@ -1,5 +1,6 @@
 
 <?php
+//Mostrar la hora de Madrid.
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -16,7 +17,6 @@ if ($conn->connect_error) {
 if(isset($_FILES["webcam"]["tmp_name"])) {
     $tmpName = $_FILES["webcam"]["tmp_name"];
     $imageName = date("Y.m.d") . " - " . date("h.i.sa") . '.jpeg';
-
     move_uploaded_file($tmpName, 'img/' . $imageName);
     $date = date("Y/m/d") . " & " .date("h:i:sa");
 
@@ -74,9 +74,11 @@ if(isset($_POST["orden"])&&isset($_POST["sku"])&&isset($_POST["idrecord"])) {
         <tr>
             <td>ID</td>
             <td>FECHA</td>
-            <td>FOTOS</td>
             <td>N° ORDEN</td>
             <td>SKU</td>
+            <td>IMAGEN 1</td>
+            <td>IMAGEN 2</td>
+            <td>IMAGEN 3</td>
         </tr>
 
         <?php 
@@ -88,9 +90,11 @@ if(isset($_POST["orden"])&&isset($_POST["sku"])&&isset($_POST["idrecord"])) {
         <tr>
             <td><?php echo $i++; ?></td>
             <td><?php echo $row["date"] ?></td>
-            <td><img src="img/<?php echo $row["image"] ?>" width=200 title="<?php echo $row["image"] ?>"></td>
             <td><?php echo $row["orden"] ?></td>
             <td><?php echo $row["sku"] ?></td>
+            <td><img src="img/<?php echo $row["image"] ?>" width=200 title="<?php echo $row["image"] ?>"></td>
+            <td><img src="img/<?php echo $row["image2"] ?>" width=200 title="<?php echo $row["image2"] ?>"></td>
+            <td><img src="img/<?php echo $row["image3"] ?>" width=200 title="<?php echo $row["image3"] ?>"></td>
         </tr>
         <?php endforeach; ?>
     </table>

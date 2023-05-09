@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 if(isset($_FILES["webcam"]["tmp_name"])) {
     $tmpName = $_FILES["webcam"]["tmp_name"];
     $imageName = date("Y.m.d") . " - " . date("h.i.sa") . '.jpeg';
-
+    date_default_timezone_set("America/Mexico_City");
     move_uploaded_file($tmpName, 'img/' . $imageName);
     $date = date("Y/m/d") . " & " .date("h:i:sa");
 
