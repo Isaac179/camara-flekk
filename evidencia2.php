@@ -45,10 +45,10 @@
 <script>
   $(document).ready(function() {
       // URL del API de Prestashop para obtener las últimas órdenes
-      var url = "https://flekk.com/api/orders?sort=id_DESC&limit=10";
+      var url = "https://tienda-qa3.flekk.com/api/orders?sort=id_DESC&limit=10";
 
       // Credenciales de acceso al API (clave API)
-      var apiKey = "GQ94F8GM558BSEVIP1AHMYA94NYRTRE7";
+      var apiKey = "GW94IHVKH8Z8RB25FJI89IHF2NCFLFPL";
 
       // Hacer la petición GET al API de Prestashop
       $.ajax({
